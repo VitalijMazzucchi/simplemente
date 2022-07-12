@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ServiceService } from '../service.service';
+import { ServiceService } from 'src/app/pages/auttenticazione/service.service';
 
 @Component({
   templateUrl: './register.page.html',

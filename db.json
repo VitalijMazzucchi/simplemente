@@ -37,6 +37,14 @@
       "lastname": "Creo",
       "roles": "dipendenti",
       "id": 5
+    },
+    {
+      "email": "pluto@gmail.com",
+      "password": "$2a$10$X3FalZvUPETNlkBJGeCV4enFF/tKjxDS.CafWkK8uEMEjeiTpgY16",
+      "firstname": "Pluto",
+      "lastname": "pippo",
+      "roles": "admin",
+      "id": 6
     }
   ]
 }
