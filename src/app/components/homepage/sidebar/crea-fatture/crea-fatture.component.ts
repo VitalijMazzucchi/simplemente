@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ServiceService } from 'src/app/pages/auttenticazione/service.service';
 
 @Component({
   selector: 'app-crea-fatture',
@@ -7,7 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreaFattureComponent implements OnInit {
   selected = 'option1';
-  constructor() {}
+  selected2 = 1;
+  @ViewChild('f') form!: NgForm;
+  constructor(private service: ServiceService, private router: Router) {}
 
   ngOnInit(): void {}
+
+  creaFatt() {
+    console.log(this.form.value);
+    this.service.addFatture(this.form.value).subscribe((resp) => {
+      this.router.navigate(['fatture']);
+    });
+  }
 }

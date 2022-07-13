@@ -3,8 +3,7 @@ export interface Fatture {
   data: '';
   causale: string;
   importo: number;
-  stato: {
-    nome: string;
-  };
+  stato: string;
+
   cliente: { id: 1 };
 }

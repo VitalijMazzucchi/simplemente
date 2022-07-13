@@ -1,55 +1,22 @@
 {
   "users": [
     {
-      "email": "simplemente@epicode.it",
-      "password": "$2a$10$7ygsnyTFm5iM9VObpI9J/.hxG4rox9Lhph1HuXXgY8dF62gqOM/Fi",
-      "utente": "Emanuele",
+      "email": "a@a.it",
+      "password": "$2a$10$oaSUV9l/0sntN1IX8X/VG.gI2IJqSW8.YHFaDu/v2JVKDPNQaLjfO",
+      "firstname": "a",
+      "lastname": "a",
+      "roles": "admin",
       "id": 1
-    },
-    {
-      "email": "vitali.mazzucchi2@gmail.com",
-      "password": "$2a$10$yfiTC8TDG7KbWX2ZEItJQu10QkDwp9Ve4l16f/SvhZVGQOcfPDRFW",
-      "firstname": "Vitalij",
-      "lastname": "Mazzucchi",
-      "roles": "admin",
-      "id": 2
-    },
-    {
-      "email": "gino.martello@hotmail.it",
-      "password": "$2a$10$gu7Sthu0.flz0HQElUeyI.xfpBKEJqod7OwThQZvZEbUryaaBPeQK",
-      "firstname": "Gino",
-      "lastname": "Martello",
-      "roles": "dipendenti",
-      "id": 3
-    },
-    {
-      "email": "c.conti@carlo.it",
-      "password": "$2a$10$zxYS7ORZwqmvrxSwirMHPOlIjGMOAY418xWOOE.RDIEwUIWOKms3.",
-      "firstname": "Carlo",
-      "lastname": "Conti",
-      "roles": "dipendenti",
-      "id": 4
-    },
-    {
-      "email": "serveilserver@me.com",
-      "password": "$2a$10$OeXnuserbr5dxK.SO2l9kexLDdcNiMGeVolc9PB.jVvSf3Dhq6dry",
-      "firstname": "Server",
-      "lastname": "Creo",
-      "roles": "dipendenti",
-      "id": 5
-    },
-    {
-      "email": "pluto@gmail.com",
-      "password": "$2a$10$X3FalZvUPETNlkBJGeCV4enFF/tKjxDS.CafWkK8uEMEjeiTpgY16",
-      "firstname": "Pluto",
-      "lastname": "pippo",
-      "roles": "admin",
-      "id": 6
     }
   ],
-  "fatture":[
+  "fatture": [
     {
-
+      "data": "2022-07-14",
+      "stato": "pagata",
+      "causale": "Pagamento in Natura",
+      "importo": "0",
+      "cliente": "nonpagata",
+      "id": 1
     }
   ]
 }

@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatCardModule } from '@angular/material/card';
 import { StellineComponent } from './stelline/stelline.component';
 import { NavbarComponent } from 'src/app/components/homepage/navbar/navbar.component';
 @NgModule({
@@ -23,7 +23,7 @@ import { NavbarComponent } from 'src/app/components/homepage/navbar/navbar.compo
     MatInputModule,
 
     MatIconModule,
-
+    MatCardModule,
     MatButtonModule,
     FormsModule,
     HttpClientModule,

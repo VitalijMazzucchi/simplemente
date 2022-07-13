@@ -1,25 +1,9 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];
+import { IUserToken } from 'src/app/pages/auttenticazione/interfacce/i-user-token';
+import { IUsers } from 'src/app/pages/auttenticazione/interfacce/i-users';
+import { ServiceService } from 'src/app/pages/auttenticazione/service.service';
 
 @Component({
   selector: 'app-clienti',
@@ -27,14 +11,45 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./clienti.component.scss'],
 })
 export class ClientiComponent implements OnInit {
-  constructor() {}
+  users: any = [];
+  error = undefined;
 
-  ngOnInit(): void {}
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  constructor(private service: ServiceService, private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.getAllUsers();
+    console.log(this.users);
+  }
+  displayedColumns: string[] = ['firstname', 'lastname', 'role'];
+  dataSource = new MatTableDataSource(this.users);
 
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    /*  const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase(); */
   }
-}
+
+    getAllUsers() {
+      this.service.getClienti().subscribe((userLogin) => {
+        this.http
+          .get('http://localhost:3000/users', {
+            headers: new HttpHeaders({
+              Authorization: 'Bearer' + userLogin?.AccessToken,
+            }),
+          })
+          .subscribe(
+            (resp) => {
+              console.log(resp);
+              this.users = resp;
+            },
+            (err) => {
+              console.log(err);
+              this.error = err.error;
+            }
+          );
+      });
+    }
+  }
+
+
+
+
