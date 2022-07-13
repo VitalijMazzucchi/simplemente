@@ -31,4 +31,5 @@ export class ServiceService {
   registrazione(obj: IUsers) {
     return this.http.post(this.linkserver + '/register', obj);
   }
+  addFattture() {}
 }

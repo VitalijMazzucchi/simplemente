@@ -5,4 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './indice.component.html',
   styleUrls: ['./indice.component.scss'],
 })
-export class IndiceComponent {}
+export class IndiceComponent {
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius!: number;
+  color!: string;
+}

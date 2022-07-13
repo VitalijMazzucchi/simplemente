@@ -1,14 +1,14 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="primary" class="example-toolbar">
+  <mat-toolbar color="primary" class="example-toolbar d-flex justify-content-between">
     <button mat-button color="primary" (click)="snav.toggle()">
 
       <mat-icon class="white">menu</mat-icon><span class="white">Simplemente</span>
     </button>
 
-    <!--     <span>
-      <a><img src="../../../assets/img/logo.png" width="80px" height="80px">Simplemente</a>
+    <span class="mb-2">
+      <a routerLink="indice"><img src="../../../assets/img/logo.png" width="80px" height="80px"></a>
     </span>
- -->
+
   </mat-toolbar>
 
   <mat-sidenav-container class=" example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -21,8 +21,11 @@
           </span>
 
         </a>
-        <a mat-list-item routerLink="fatture">
+        <a mat-list-item routerLink="Addfatture">
           <mat-icon>add</mat-icon> Aggiungi fatture
+        </a>
+        <a mat-list-item routerLink="fatture">
+          <mat-icon>receipt</mat-icon> Fatture
         </a>
         <a mat-list-item routerLink="clienti">
           <mat-icon>perm_identity</mat-icon> Clienti

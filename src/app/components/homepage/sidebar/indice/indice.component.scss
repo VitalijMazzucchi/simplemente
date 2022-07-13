@@ -51,11 +51,18 @@
     }
   }
   mat-card{
-    margin-top:2rem
+    margin-top:2rem;
+    box-shadow: 0px 0px 10px 2px rgb(255, 255, 255) !important;
+    margin-bottom: 2rem;
+    cursor: pointer;
+
+
   }
+
   .card_1{
     display: flex;
     justify-content: space-around;
+
     .img{
       width: 200px;
       height: 200px;
@@ -70,10 +77,13 @@
       margin-top: 0.3rem;
       padding: 0.5rem;
 
+
+
     }
   }
   mat-sidenav-container{
     padding:2rem 0;
     margin-top: 2rem;
+
 
   }

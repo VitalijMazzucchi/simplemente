@@ -14,9 +14,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { InternoModule } from './components/homepage/interno.module';
 import { AuttenticazioneModule } from './pages/auttenticazione/auttenticazione.module';
+import { PagenotfoudPage } from './pages/pagenotfoud/pagenotfoud.page';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PagenotfoudPage],
   imports: [
     BrowserModule,
     AppRoutingModule,

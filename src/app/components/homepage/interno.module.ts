@@ -17,9 +17,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { RegisterPage } from './sidebar/register/register.page';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IndiceComponent } from './sidebar/indice/indice.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
+import { MatRippleModule } from '@angular/material/core';
+import { CreaFattureComponent } from './sidebar/crea-fatture/crea-fatture.component';
+
 @NgModule({
   declarations: [
     ClientiComponent,
@@ -27,6 +33,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     HomepagePage,
     RegisterPage,
     IndiceComponent,
+    CreaFattureComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +53,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatIconModule,
     FormsModule,
     MatPaginatorModule,
+    HttpClientModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatRippleModule,
   ],
 })
 export class InternoModule {}
