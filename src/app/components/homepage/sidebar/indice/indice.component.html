@@ -7,8 +7,8 @@
 
 
       <!--             <<<<-----------       (click)="si apre" -->
-      <mat-card-title>'Nome utente loggato'</mat-card-title>
-      <mat-card-subtitle>'Cognome utente'</mat-card-subtitle>
+      <mat-card-title>{{myname}}</mat-card-title>
+      <mat-card-subtitle>{{sname}}</mat-card-subtitle>
       <div class="card_1">
         <div class="img"><img mat-card-image
             src="https://cdn.pixabay.com/photo/2018/08/09/12/22/call-center-3594408__340.png">
@@ -17,11 +17,13 @@
         <mat-card-content>
 
           <p>
-            informazione 1
+            {{mymail}}
 
           </p>
-          <p>informazione 2</p>
-          <p>informazione 3</p>
+          <p>{{myrole}}</p>
+
+          <p *ngIf="myrole == 'CLIENTE'">Welcome, here you may check your invoice</p>
+          <p *ngIf="myrole == 'ADMIN'">U gotta work mf .</p>
 
         </mat-card-content>
       </div>
@@ -29,7 +31,8 @@
 
   </mat-grid-tile>
   <mat-grid-tile>
-    <mat-card matRipple [matRippleRadius]="250" matRippleColor="#3f45b524" [matRippleCentered]="true">
+    <mat-card matRipple [matRippleRadius]="250" matRippleColor="#3f45b524" [matRippleCentered]="true"
+      routerLink="/homepage/dipendenti">
       <!--             <<<<-----------       (click)="si apre" -->
       <mat-card-title>Employers</mat-card-title>
       <mat-card-subtitle>Add,remove or check</mat-card-subtitle>
@@ -39,8 +42,9 @@
 
         <mat-card-content>
           <mat-icon title=" Number of employers">people</mat-icon>
-          <p>
-            ---
+          <mat-spinner *ngIf="dipendenti.length == 0" [diameter]="20"></mat-spinner>
+          <p *ngIf="dipendenti.length != 0">
+            {{dipendenti.length}}
             <!-- numero dipendenti (array.lenght) -->
           </p>
           <p>informazione 2</p>
@@ -62,8 +66,9 @@
 
         <mat-card-content>
           <mat-icon title="Number of customers">people</mat-icon>
-          <p>
-            ---
+          <mat-spinner [diameter]="20" *ngIf="clienti.length == 0"></mat-spinner>
+          <p *ngIf="clienti.length != 0">
+            {{clienti.length}}
           </p>
           <p>informazione 2</p>
           <p>informazione 3</p>
@@ -87,9 +92,10 @@
 
         <mat-card-content>
           <mat-icon title="Number of invoice">money</mat-icon>
-          <p>
-            --- -->
-            <!-- numero fatture (array.lenght) -->
+          <mat-spinner [diameter]="20" *ngIf="fatture.length == 0 "></mat-spinner>
+          <p *ngIf="fatture == []">0</p>
+          <p *ngIf="fatture.length != 0">
+            {{fatture.length}}
           </p>
           <p>informazione 2</p>
           <p>informazione 3</p>

@@ -7,17 +7,16 @@ import { ServiceService } from 'src/app/pages/auttenticazione/service.service';
 import { Observable, PartialObserver, interval} from 'rxjs';
 import { filter } from 'rxjs/operators'
 
+
 @Component({
-  selector: 'app-clienti',
-  templateUrl: './clienti.component.html',
-  styleUrls: ['./clienti.component.scss'],
+  selector: 'app-dipendenti',
+  templateUrl: './dipendenti.component.html',
+  styleUrls: ['./dipendenti.component.scss']
 })
-export class ClientiComponent implements OnInit {
+export class DipendentiComponent implements OnInit {
   users: any = [];
   error = undefined;
-  tmpObj: any;
-  utLoggato=localStorage.getItem('Utente')
-  /* luigino =<string |null>JSON.parse(this.utLoggato)  */
+
 
 
 
@@ -28,9 +27,8 @@ export class ClientiComponent implements OnInit {
 
 
     this.getAllUsers();
-    console.log(this.utLoggato)
   }
-  displayedColumns: string[] = ['firstname', 'lastname', 'role', 'email'];
+  displayedColumns: string[] = ['firstname', 'lastname', 'role', 'email','Option'];
   dataSource = new MatTableDataSource(this.users);
 
   applyFilter(event: Event) {
@@ -38,23 +36,35 @@ export class ClientiComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-arrFil:any = []
-
+  del(id:number) {
+    this.service.delUt(id).subscribe(
+      (resp) => {
+        console.log(resp);
+      },
+      (err) => {
+        console.log(err);
+        this.error = err.error;
+      }
+    )
+    this.getAllUsers()
+  }
 
 
     getAllUsers() {
-      this.service.getClienti().subscribe((users) => {
+      this.service.getClienti().subscribe((localstorage) => {
+        console.log(localstorage);
+        console.log(localstorage.AccessToken);
         this.http
           .get('http://localhost:3000/users', {
             headers: new HttpHeaders({
-              Authorization: 'Bearer' +users
+              Authorization: 'Bearer' + localstorage?.AccessToken,
             }),
           })
           .subscribe(
             (resp) => {
               console.log(resp);
               this.users = resp;
-              this.users = this.users.filter((ele: { roles: string; }) => ele.roles == 'cliente');
+              this.users = this.users.filter((ele: { roles: string; }) => ele.roles == 'admin');
               this.dataSource = new MatTableDataSource(this.users);
             },
             (err) => {
@@ -66,6 +76,9 @@ arrFil:any = []
 
     }
   }
+
+
+
 
 
 

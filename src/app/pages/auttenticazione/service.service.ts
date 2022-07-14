@@ -66,4 +66,10 @@ export class ServiceService {
       }
     }
   }
+  delFatture(id :number){
+    return this.http.delete(this.linkserver + '/fatture/' + id)
+  }
+  delUt(id :number){
+    return this.http.delete(this.linkserver + '/users/' + id)
+  }
 }

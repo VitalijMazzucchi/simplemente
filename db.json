@@ -7,15 +7,87 @@
       "lastname": "a",
       "roles": "admin",
       "id": 1
+    },
+    {
+      "email": "m.r@simple.it",
+      "password": "$2a$10$EFuaPj0iaZOI1bJjgNFB7eOcKsjti4xqKaWkLOGhaqDlBhOVLPfK6",
+      "firstname": "Mario",
+      "lastname": "Rossi",
+      "roles": "cliente",
+      "id": 2
+    },
+    {
+      "email": "gio.rana@team.it",
+      "password": "$2a$10$gBg5QHeQk1qFFXftauJ9TuaQQI9bagrfFIiYWCZhvDVz8HmO1wDx6",
+      "firstname": "Giovanni",
+      "lastname": "Rana",
+      "roles": "cliente",
+      "id": 3
+    },
+    {
+      "email": "franco.be@gmail.com",
+      "password": "$2a$10$KAG1XXfmKh9aKurfSPRMeOD8XqCA5VAOFS/vM5irrIHmIwfAo3X06",
+      "firstname": "Franco",
+      "lastname": "Berghi",
+      "roles": "cliente",
+      "id": 4
+    },
+    {
+      "email": "francesca@epicode.it",
+      "password": "$2a$10$4Kab5pikygemOUnGNg2cEORwMVdt.HjQSS9ohgWJ.o88m4fFmntwu",
+      "firstname": "Francesca",
+      "lastname": "Esposito",
+      "roles": "admin",
+      "id": 5
+    },
+    {
+      "email": "edo.pelle@epicode.it",
+      "password": "$2a$10$TSGZRtjlfyoKXL3Ff51i2.ZCY1eTTRhEN/OeFA1xMVVmobTXj0N5W",
+      "firstname": "Edoardo",
+      "lastname": "Pellegrini",
+      "roles": "admin",
+      "id": 6
+    },
+    {
+      "email": "simo.nico@epicode.it",
+      "password": "$2a$10$vR8VtaoebF7/Ue0fkvw4jOLdEG77vIrxmTJkdVHsqqfpMLMVdSFLm",
+      "firstname": "Simone",
+      "lastname": "Nicotra",
+      "roles": "admin",
+      "id": 7
+    },
+    {
+      "email": "habot@mailinator.com",
+      "password": "$2a$10$Kbsp8SQwcQV/01QGixVUTez95Pk0R7HbLdJXrxhbAjtNjBEs0yNl2",
+      "firstname": "Dolan",
+      "lastname": "Morris",
+      "roles": "cliente",
+      "id": 8
+    },
+    {
+      "email": "natorysaz@mailinator.com",
+      "password": "$2a$10$ajhkYEtyz6VkuX8rIOP6eev20Ay0aauiI6jwcpp0oKM.ee5mTQmim",
+      "firstname": "Zelda",
+      "lastname": "Ferrell",
+      "roles": "cliente",
+      "id": 9
+    },
+    {
+      "email": "cla.albe@epicode.it",
+      "password": "$2a$10$DiCuVHCZ07ABHlBc1o3OSOMQFgDdj4aFWg/5./4MkuYt6NZiSHhLG",
+      "firstname": "Claudia",
+      "lastname": "Albertini",
+      "roles": "admin",
+      "id": 10
     }
   ],
   "fatture": [
     {
       "data": "2022-07-14",
-      "stato": "pagata",
-      "causale": "Pagamento in Natura",
-      "importo": "0",
-      "cliente": "nonpagata",
+      "stato": "nonpagata",
+      "causale": "Prova",
+      "importo": "450",
+      "cliente": 4,
       "id": 1
     }
   ]

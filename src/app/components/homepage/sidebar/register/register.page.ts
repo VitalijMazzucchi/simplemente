@@ -17,7 +17,7 @@ export class RegisterPage implements OnInit {
   registra() {
     this.service.registrazione(this.form.value).subscribe(
       (resp) => {
-        this.router.navigate(['homepage']);
+        this.router.navigate(['homepage/clienti']);
       },
       (err) => {
         console.log(err);

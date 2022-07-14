@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientiComponent } from './sidebar/clienti/clienti.component';
 import { FattureComponent } from './sidebar/fatture/fatture.component';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { InternoRoutingModule } from './interno-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -25,6 +25,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatRippleModule } from '@angular/material/core';
 import { CreaFattureComponent } from './sidebar/crea-fatture/crea-fatture.component';
+import { DipendentiComponent } from './sidebar/dipendenti/dipendenti.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,13 @@ import { CreaFattureComponent } from './sidebar/crea-fatture/crea-fatture.compon
     RegisterPage,
     IndiceComponent,
     CreaFattureComponent,
+    DipendentiComponent,
+
   ],
   imports: [
     CommonModule,
     InternoRoutingModule,
-
+    MatProgressSpinnerModule,
     MatGridListModule,
     MatSidenavModule,
     MatListModule,
